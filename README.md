@@ -20,7 +20,7 @@ Set the path to your sigma rules on the variable ``file_path = ``
 
 ## Limitations:
 
-    - The official pysigma-backend-sentinelone-pq pipeline file lacks some field mapping, hence not all event categories or files are supported, eventhough a modified pipeline file is provided, this includes some of the fields missing on the original repo
+The official ``pysigma-backend-sentinelone-pq`` pipeline file lacks some field mapping, hence not all event categories or fields are supported, eventhough a modified pipeline file is provided, this includes some of the fields missing on the original repo
 
 ## References:
 [sigma-cli](https://github.com/SigmaHQ/sigma-cli)
