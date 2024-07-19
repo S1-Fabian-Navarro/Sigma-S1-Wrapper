@@ -27,7 +27,7 @@ def sentinelonepq_pipeline() -> ProcessingPipeline:
         'process_creation':{
             "ProcessId":"tgt.process.pid",
             "Image":"tgt.process.image.path",
-            "Description":"tgt.process.displayName", #Not sure whether this should be Description or Product???
+            "Description":"tgt.process.displayName", 
             "Publisher": "tgt.process.publisher",
             "Product":"tgt.process.displayName",
             "Company":"tgt.process.publisher",
@@ -44,7 +44,8 @@ def sentinelonepq_pipeline() -> ProcessingPipeline:
             "ParentCommandLine":"src.process.cmdline",
             "ParentProcessGuid":"src.process.parent.uid",
             "ProcessGuid":"tgt.process.uid",
-            "LogonGuid":"tgt.process.eUserUid"
+            "LogonGuid":"tgt.process.eUserUid",
+            "Imphash":"event.data.Imphash"
         },
         'file':{
             "Image": "src.process.image.path",
@@ -55,7 +56,8 @@ def sentinelonepq_pipeline() -> ProcessingPipeline:
             "SourceFilename":"tgt.file.oldPath",
             "User":"src.process.user",
             "ProcessGuid":"src.process.uid",
-            "ProcessId":"src.process.pid"
+            "ProcessId":"src.process.pid",
+            "Imphash":"event.data.Imphash"
         },
         'image_load':{
             "ImageLoaded":"module.path",
@@ -70,7 +72,8 @@ def sentinelonepq_pipeline() -> ProcessingPipeline:
             "ProcessId":"src.process.pid",
             "Product": "src.process.displayName",
             "Signed":"tgt.file.isSigned",
-            "OriginalFileName":"src.process.parent.displayName"
+            "OriginalFileName":"src.process.parent.displayName",
+            "Imphash":"event.data.Imphash"
     
 
         },
@@ -82,7 +85,8 @@ def sentinelonepq_pipeline() -> ProcessingPipeline:
             "ParentCommandLine":"src.process.parent.cmdline",
             "ProcessId":"src.process.pid",
             "ProcessGuid":"src.process.uid",
-            "User":"src.process.user"
+            "User":"src.process.user",
+            "Imphash":"event.data.Imphash"
 
 
         },
@@ -95,7 +99,8 @@ def sentinelonepq_pipeline() -> ProcessingPipeline:
             "Details": "registry.value",
             "ProcessId":"src.process.pid",
             "ProcessGuid":"src.process.uid",
-            "NewName":"registry.value"
+            "NewName":"registry.value",
+            "Imphash":"event.data.Imphash"
         },
         'dns':{
             "Image": "src.process.image.path",
